@@ -59,7 +59,7 @@ Import the `RangeSlider` component into your Svelte file and bind it to two stat
 
 ## Examples
 
-![RangeSlider Preview](examples.png)
+![RangeSlider Preview](static/examples.png)
 
 ## Props
 
