@@ -16,7 +16,7 @@ Import the `DoubleThumbSlider` component into your Svelte file and bind it to tw
 
 ```svelte
 <script lang="ts">
-  import DoubleThumbSlider from "svelte-5-range-slider/DoubleThumbSlider.svelte";
+  import RangeSlider  from "svelte-5-range-slider/RangeSlider.svelte";
 
   let thumb1 = 25;
   let thumb2 = 50;
