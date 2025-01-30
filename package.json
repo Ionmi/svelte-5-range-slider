@@ -20,7 +20,7 @@
     "input",
     "component"
   ],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run prepack",
@@ -42,6 +42,13 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
+    "./RangeSlider.svelte": {
+      "types": [
+        "./dist/RangeSlider/RangeSlider.d.ts",
+        "./dist/RangeSlider/RangeSlider.svelte.d.ts"
+      ],
+      "svelte": "./dist/RangeSlider/RangeSlider.svelte"
+    },
     ".": {
       "types": "./dist/index.d.ts",
       "svelte": "./dist/index.js"
