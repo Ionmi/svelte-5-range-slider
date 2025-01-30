@@ -1,58 +1,100 @@
-# create-svelte
+# DoubleThumbSlider - Svelte Component
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+A customizable double-thumb range slider built for Svelte. This component allows users to select a range between a minimum and maximum value with two draggable thumbs.
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+## Installation
 
-## Creating a project
+Install the package via npm:
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+```sh
+npm install svelte-5-range-slider
 ```
 
-## Developing
+## Usage
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Import the `DoubleThumbSlider` component into your Svelte file and bind it to two state variables:
 
-```bash
-npm run dev
+```svelte
+<script lang="ts">
+  import DoubleThumbSlider from "svelte-5-range-slider/DoubleThumbSlider.svelte";
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+  let thumb1 = 25;
+  let thumb2 = 50;
+
+  const trackOptions = {
+    height: 12,
+    color: "#323841",
+    radius: 10000,
+    connecting: {
+      color: "#ECF9FF",
+      padding: 4,
+      radius: 100000,
+    },
+  };
+
+  const thumbOptions = {
+    color: "#1D232A",
+    size: 16,
+    radius: 20,
+  };
+
+  const sliderOptions = {
+    min: 18,
+    max: 90,
+    step: 1,
+  };
+</script>
+
+<div class="slider-container">
+  <span>{thumb1} - {thumb2}</span>
+  <DoubleThumbSlider
+    bind:thumb1
+    bind:thumb2
+    {sliderOptions}
+    {trackOptions}
+    {thumbOptions}
+  />
+</div>
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+## Props
 
-## Building
+### `sliderOptions: SliderOptions`
 
-To build your library:
+- `min` (number) - Minimum value of the slider
+- `max` (number) - Maximum value of the slider
+- `step` (number) - Increment steps
 
-```bash
-npm run package
-```
+### `trackOptions: TrackOptions`
 
-To create a production version of your showcase app:
+- `height` (number) - Height of the track
+- `color` (string) - Color of the track
+- `radius` (number) - Border radius of the track
+- `connecting.color` (string) - Color of the selected range section
+- `connecting.padding` (number) - Padding around the selected range
+- `connecting.radius` (number) - Border radius of the selected range
 
-```bash
-npm run build
-```
+### `thumbOptions: ThumbOptions`
 
-You can preview the production build with `npm run preview`.
+- `color` (string) - Color of the thumb
+- `size` (number) - Size of the thumb
+- `radius` (number) - Border radius of the thumb
+- `border.size` (number) - Border width of the thumb (optional)
+- `border.color` (string) - Border color of the thumb (optional)
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Events
 
-## Publishing
+This component automatically updates `thumb1` and `thumb2` values when the user interacts with the slider.
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
+## Styling
 
-To publish your library to [npm](https://www.npmjs.com):
+The slider is styled via inline styles and can be customized using the provided options. If additional styling is needed, you can wrap it in a styled container and apply CSS classes accordingly.
 
-```bash
-npm publish
-```
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+Happy coding! 🎉
+
