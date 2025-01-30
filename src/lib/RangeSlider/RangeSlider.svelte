@@ -4,7 +4,7 @@
     SliderOptions,
     ThumbOptions,
     TrackOptions,
-  } from "./RangeSlider.js";
+  } from "./types.js";
 
   let {
     disabled = $bindable(false),
