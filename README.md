@@ -18,8 +18,8 @@ Import the `RangeSlider` component into your Svelte file and bind it to two stat
 <script lang="ts">
   import RangeSlider  from "svelte-5-range-slider/RangeSlider.svelte";
 
-  let thumb1 = 25;
-  let thumb2 = 50;
+  let thumb1 = $state(25);
+  let thumb2 = $state(50);
 
   const trackOptions = {
     height: 12,
@@ -57,6 +57,10 @@ Import the `RangeSlider` component into your Svelte file and bind it to two stat
 </div>
 ```
 
+## Placeholder Image
+
+![RangeSlider Preview](placeholder-image.png)
+
 ## Props
 
 ### `sliderOptions: SliderOptions`
@@ -82,6 +86,40 @@ Import the `RangeSlider` component into your Svelte file and bind it to two stat
 - `border.size` (number) - Border width of the thumb (optional)
 - `border.color` (string) - Border color of the thumb (optional)
 
+## Types
+
+```ts
+interface TrackOptions {
+  height: number;
+  color: string;
+  radius: number;
+  class?: string;
+  connecting?: {
+    color: string;
+    padding: number;
+    radius: number;
+    class?: string;
+  } | null;
+}
+
+interface ThumbOptions {
+  color: string;
+  size: number;
+  radius: number;
+  class?: string;
+  border?: {
+    size: number;
+    color: string;
+  } | null;
+}
+
+interface SliderOptions {
+  min: number;
+  max: number;
+  step: number;
+}
+```
+
 ## Events
 
 This component automatically updates `thumb1` and `thumb2` values when the user interacts with the slider.
@@ -97,4 +135,3 @@ This project is licensed under the MIT License.
 ---
 
 Happy coding! 🎉
-
