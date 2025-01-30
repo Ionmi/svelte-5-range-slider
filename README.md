@@ -57,9 +57,9 @@ Import the `RangeSlider` component into your Svelte file and bind it to two stat
 </div>
 ```
 
-## Placeholder Image
+## Examples
 
-![RangeSlider Preview](placeholder-image.png)
+![RangeSlider Preview](examples.png)
 
 ## Props
 
