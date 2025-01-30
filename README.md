@@ -1,4 +1,4 @@
-# DoubleThumbSlider - Svelte Component
+# RangeSlider - Svelte Component
 
 A customizable double-thumb range slider built for Svelte. This component allows users to select a range between a minimum and maximum value with two draggable thumbs.
 
@@ -12,7 +12,7 @@ npm install svelte-5-range-slider
 
 ## Usage
 
-Import the `DoubleThumbSlider` component into your Svelte file and bind it to two state variables:
+Import the `RangeSlider` component into your Svelte file and bind it to two state variables:
 
 ```svelte
 <script lang="ts">
@@ -47,7 +47,7 @@ Import the `DoubleThumbSlider` component into your Svelte file and bind it to tw
 
 <div class="slider-container">
   <span>{thumb1} - {thumb2}</span>
-  <DoubleThumbSlider
+  <RangeSlider
     bind:thumb1
     bind:thumb2
     {sliderOptions}
