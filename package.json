@@ -2,6 +2,12 @@
   "name": "svelte-5-range-slider",
   "license": "MIT",
   "author": "ionmi <ionmi.dev@gmail.com>",
+  "description": "A range slider component for Svelte 5",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ionmi/svelte-5-range-slider.git"
+  },
+  "homepage": "https://github.com/Ionmi/svelte-5-range-slider",
   "keywords": [
     "svelte",
     "svelte 5",
@@ -14,7 +20,7 @@
     "input",
     "component"
   ],
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run prepack",
